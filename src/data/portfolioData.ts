@@ -60,7 +60,7 @@ export const PERSONAL_INFO = {
   heroSupporting: 'Exploring ideas, understanding how things work and turning possibilities into something real.',
   
   aboutMe: "I'm Nithya, a Computer Science student at GNITS Hyderabad who loves exploring new things, solving problems and challenging myself. I enjoy figuring out the unfamiliar, learning along the way and reaching goals that once seemed difficult. What excites me the most is building something from scratch and seeing people use it. For me, software engineering is not just about writing code—it's about understanding how things work behind the scenes and turning possibilities into something real.",
-  signatureQuote: 'Because imagination is free.',
+  signatureQuote: "Why stop at what's possible? Because imagination is free, right?",
 };
 
 export const PERSONAL_INTERESTS = [
@@ -92,7 +92,7 @@ export const IDEATION_PROCESS = {
     { title: 'Starting points, not final answers', detail: 'Existing solutions are benchmarks to learn from, not boundaries you can never surpass.' },
     { title: 'Perspectives reveal blind spots', detail: 'Different viewpoints uncover critical nuances and constraints that one person might miss.' },
     { title: 'Understanding beats feature bloat', detail: 'Understanding the actual human problem matters far more than simply adding flashy features.' },
-    { title: 'Imagination sparks creation', detail: 'Imagination is an indispensable part of software engineering — because imagination is free.' },
+    { title: 'Imagination sparks creation', detail: "Imagination is an indispensable part of software engineering — why stop at what's possible? Because imagination is free, right?" },
   ],
 };
 
@@ -135,8 +135,8 @@ export const PERSONAL_QUOTES: QuoteItem[] = [
   },
   {
     id: 'quote-2',
-    quote: 'Because imagination is free.',
-    context: 'My perspective on ideation, dreaming up bold concepts, and exploring possibilities beyond what already exists.',
+    quote: "Why stop at what's possible? Because imagination is free, right?",
+    context: 'My signature outlook on ideation, dreaming up bold concepts, and exploring possibilities beyond what already exists.',
   },
   {
     id: 'quote-3',

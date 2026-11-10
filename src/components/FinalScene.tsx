@@ -24,7 +24,7 @@ export const FinalScene: React.FC<FinalSceneProps> = ({ onOpenResume }) => {
 
       <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10 space-y-14">
         <ChapterHeader
-          number="07"
+          number="08"
           title="Let's Connect"
           subtitle="Open to conversations, technical explorations, and software engineering opportunities."
           category="Contact"

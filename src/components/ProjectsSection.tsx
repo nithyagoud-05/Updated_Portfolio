@@ -83,7 +83,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenLightbox
     <section id="works" className="py-20 sm:py-32 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ChapterHeader
-          number="04"
+          number="03"
           title="The Things I Have Built"
           subtitle="Full-stack applications and prototypes engineered for real-world trust, transparency, and high-integrity data traceability — presented through authentic deployed interfaces."
           category="Projects"

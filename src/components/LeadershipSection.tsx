@@ -72,10 +72,10 @@ export const LeadershipSection: React.FC<LeadershipSectionProps> = ({ eventPhoto
   const activeTrack = LEADERSHIP_TRACKS[selectedTrackIndex];
 
   return (
-    <section className="py-20 sm:py-32 relative scroll-mt-20">
+    <section id="leadership" className="py-20 sm:py-32 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ChapterHeader
-          number="05"
+          number="06"
           title="Leadership — Beyond the Code"
           subtitle="Contributing to technical communities, organizing hands-on workshops, and collaborating with peers to learn and build together."
           category="Leadership"

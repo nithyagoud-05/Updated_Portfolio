@@ -24,7 +24,7 @@ export const ToolkitSection: React.FC = () => {
     <section id="toolkit" className="py-20 sm:py-32 relative scroll-mt-20 bg-[#07070a]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
         <ChapterHeader
-          number="06"
+          number="02"
           title="The Engineering Toolkit"
           subtitle="Core technical capabilities honed through competitive problem solving, software engineering coursework, and production deployments."
           category="Capabilities"

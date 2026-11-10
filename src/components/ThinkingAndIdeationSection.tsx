@@ -20,7 +20,7 @@ export const ThinkingAndIdeationSection: React.FC = () => {
         {/* 1. HOW I THINK AND APPROACH PROBLEMS */}
         <div>
           <ChapterHeader
-            number="02"
+            number="07"
             title="Before finding the solution, understand the problem."
             subtitle="My personal working philosophy when facing bugs, complex architecture, and team roadblocks."
             category="Philosophy"

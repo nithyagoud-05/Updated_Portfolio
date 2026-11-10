@@ -150,7 +150,9 @@ export const PersonSection: React.FC<PersonSectionProps> = ({ onOpenResume, onOp
                 A Thought That Describes Me
               </div>
               <blockquote className="font-serif italic text-2xl sm:text-3xl text-amber-100 font-normal leading-snug">
-                &ldquo;Because imagination is free.&rdquo;
+                &ldquo;Why stop at what&apos;s possible?
+                <br />
+                <span className="text-amber-200">Because imagination is free, right?</span>&rdquo;
               </blockquote>
               <p className="mt-3 text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
                 I enjoy imagining possibilities beyond what already exists. Brainstorming with people, combining different perspectives, and exploring what current solutions might be missing are some of the things I genuinely enjoy.

@@ -36,7 +36,7 @@ export const MilestonesSection: React.FC<MilestonesSectionProps> = ({ onOpenLigh
     <section id="milestones" className="py-20 sm:py-32 relative scroll-mt-20 bg-[#060608]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ChapterHeader
-          number="05"
+          number="04"
           title="The Milestones"
           subtitle="Competitive triumphs, institutional scholarships, and corporate leadership honors — verified through authentic credentials."
           category="Recognition"

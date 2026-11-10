@@ -54,16 +54,6 @@ const TIMELINE_EVENTS: TimelineEvent[] = [
     proof: '179 / 200 · State Rank 11',
     icon: Compass,
   },
-  {
-    year: '2020',
-    stage: 'Secondary Education',
-    title: 'Class 10 Board Examination — 10.0 CGPA',
-    highlight: 'Perfect Cumulative Grade Point Average',
-    narrative:
-      'I completed my secondary education with a perfect 10.0 CGPA across all subjects, building consistent academic discipline and curiosity.',
-    proof: '10.0 / 10.0 CGPA',
-    icon: Award,
-  },
 ];
 
 export const JourneyTimeline: React.FC = () => {
@@ -74,7 +64,7 @@ export const JourneyTimeline: React.FC = () => {
     <section id="journey" className="py-20 sm:py-28 relative scroll-mt-20 bg-[#050507]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ChapterHeader
-          number="04"
+          number="05"
           title="Academic Journey"
           subtitle="Evidence of consistency, effort, and conceptual discipline — establishing the foundations for building resilient software."
           category="Journey"

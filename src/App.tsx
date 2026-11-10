@@ -22,7 +22,7 @@ export default function App() {
   // Track active section for clean navigation highlight
   useEffect(() => {
     const handleScroll = () => {
-      const sectionIds = ['origin', 'thinking', 'journey', 'works', 'milestones', 'toolkit', 'credits'];
+      const sectionIds = ['origin', 'toolkit', 'works', 'milestones', 'journey', 'leadership', 'thinking', 'credits'];
       const scrollPosition = window.scrollY + 200;
 
       for (const id of sectionIds) {
@@ -87,11 +87,8 @@ export default function App() {
             onOpenLightbox={(data) => setLightboxData(data)}
           />
 
-          {/* Chapter 02: Thinking, Ideation & Purpose */}
-          <ThinkingAndIdeationSection />
-
-          {/* Chapter 03: The Making of an Engineer */}
-          <JourneyTimeline />
+          {/* Chapter 02: The Engineering Toolkit */}
+          <ToolkitSection />
 
           {/* Chapter 03: The Things I Have Built */}
           <ProjectsSection
@@ -103,13 +100,16 @@ export default function App() {
             onOpenLightbox={(data) => setLightboxData(data)}
           />
 
-          {/* Chapter 05: Leadership — Beyond the Code */}
+          {/* Chapter 05: Academic Journey */}
+          <JourneyTimeline />
+
+          {/* Chapter 06: Leadership — Beyond the Code */}
           <LeadershipSection />
 
-          {/* Chapter 06: The Engineering Toolkit */}
-          <ToolkitSection />
+          {/* Chapter 07: Thinking, Ideation & Purpose */}
+          <ThinkingAndIdeationSection />
 
-          {/* Chapter 07: The Final Scene & Credits */}
+          {/* Chapter 08: The Final Scene & Credits */}
           <FinalScene
             onOpenResume={() => setIsResumeOpen(true)}
             onReplayIntro={() => {

@@ -10,11 +10,12 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResume, activeSect
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Origin', href: '#origin', id: 'origin' },
-    { label: 'Philosophy', href: '#thinking', id: 'thinking' },
-    { label: 'Journey', href: '#journey', id: 'journey' },
+    { label: 'About', href: '#origin', id: 'origin' },
+    { label: 'Toolkit', href: '#toolkit', id: 'toolkit' },
     { label: 'Works', href: '#works', id: 'works' },
     { label: 'Milestones', href: '#milestones', id: 'milestones' },
+    { label: 'Journey', href: '#journey', id: 'journey' },
+    { label: 'Ideology', href: '#thinking', id: 'thinking' },
   ];
 
   const handleLinkClick = (href: string) => {
