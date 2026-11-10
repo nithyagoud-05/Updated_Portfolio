@@ -1,0 +1,144 @@
+import React, { useState, useEffect } from 'react';
+import { OpeningSequence } from './components/OpeningSequence';
+import { Navigation } from './components/Navigation';
+import { PersonSection } from './components/PersonSection';
+import { ThinkingAndIdeationSection } from './components/ThinkingAndIdeationSection';
+import { JourneyTimeline } from './components/JourneyTimeline';
+import { ProjectsSection } from './components/ProjectsSection';
+import { MilestonesSection } from './components/MilestonesSection';
+import { LeadershipSection } from './components/LeadershipSection';
+import { ToolkitSection } from './components/ToolkitSection';
+import { FinalScene } from './components/FinalScene';
+import { ResumeModal } from './components/ResumeModal';
+import { CinematicControls } from './components/CinematicControls';
+import { ImageLightbox, LightboxData } from './components/ImageLightbox';
+
+export default function App() {
+  const [showOpening, setShowOpening] = useState<boolean>(true);
+  const [isResumeOpen, setIsResumeOpen] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>('origin');
+  const [lightboxData, setLightboxData] = useState<LightboxData | null>(null);
+
+  // Track active section for clean navigation highlight
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionIds = ['origin', 'thinking', 'journey', 'works', 'milestones', 'toolkit', 'credits'];
+      const scrollPosition = window.scrollY + 200;
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleExploreWork = () => {
+    setTimeout(() => {
+      const worksEl = document.getElementById('works');
+      if (worksEl) {
+        worksEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
+  return (
+    <div className="relative min-h-screen bg-[#070709] text-[#e8e8ed] font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200">
+      {/* 35mm Film Grain Overlay (Simulated Cinematic Texture) */}
+      <div className="film-grain" />
+
+      {/* Atmospheric radial background vignettes */}
+      <div className="fixed inset-0 cinematic-vignette z-0 pointer-events-none" />
+
+      {/* Cinematic Opening Sequence */}
+      {showOpening && (
+        <OpeningSequence
+          onComplete={() => setShowOpening(false)}
+          onOpenResume={() => {
+            setShowOpening(false);
+            setIsResumeOpen(true);
+          }}
+          onExploreWork={handleExploreWork}
+        />
+      )}
+
+      {/* Main Experience Layout */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        {/* Top Bar Navigation (Strict 3-zone contract) */}
+        <Navigation
+          onOpenResume={() => setIsResumeOpen(true)}
+          activeSection={activeSection}
+        />
+
+        {/* Narrative Chapters Progression */}
+        <main className="flex-1">
+          {/* Chapter 01: The Person Behind the Code */}
+          <PersonSection
+            onOpenResume={() => setIsResumeOpen(true)}
+            onOpenLightbox={(data) => setLightboxData(data)}
+          />
+
+          {/* Chapter 02: Thinking, Ideation & Purpose */}
+          <ThinkingAndIdeationSection />
+
+          {/* Chapter 03: The Making of an Engineer */}
+          <JourneyTimeline />
+
+          {/* Chapter 03: The Things I Have Built */}
+          <ProjectsSection
+            onOpenLightbox={(data) => setLightboxData(data)}
+          />
+
+          {/* Chapter 04: The Milestones */}
+          <MilestonesSection
+            onOpenLightbox={(data) => setLightboxData(data)}
+          />
+
+          {/* Chapter 05: Leadership — Beyond the Code */}
+          <LeadershipSection />
+
+          {/* Chapter 06: The Engineering Toolkit */}
+          <ToolkitSection />
+
+          {/* Chapter 07: The Final Scene & Credits */}
+          <FinalScene
+            onOpenResume={() => setIsResumeOpen(true)}
+            onReplayIntro={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setShowOpening(true);
+            }}
+          />
+        </main>
+      </div>
+
+      {/* Floating Cinematic Audio & Replay Controls */}
+      <CinematicControls
+        onReplayIntro={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          setShowOpening(true);
+        }}
+      />
+
+      {/* Interactive Curriculum Vitae & Dossier Modal */}
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
+
+      {/* High-Resolution Media & Certificate Lightbox */}
+      <ImageLightbox
+        data={lightboxData}
+        onClose={() => setLightboxData(null)}
+      />
+    </div>
+  );
+}
