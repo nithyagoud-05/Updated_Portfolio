@@ -9,6 +9,7 @@ export const RELIANCE_AWARD_LETTER = '/assets/aistudio/Reliance_acceptance_9b7e4
 export const SPARK_CHAMBER_CERTIFICATE = '/assets/aistudio/spark-chamber_8974e525.jpeg';
 export const SERVICENOW_SLIDE = '/assets/aistudio/image_00c9b052.png';
 export const MCKINSEY_ACCEPTANCE = '/assets/aistudio/mc_c_db2be7c5.jpeg';
+export const GOOGLE_AI_CERTIFICATE = '/assets/aistudio/Google_AI_Essentials_cfe52cc3.jpeg';
 
 export const ANNAPURNA_SCREENSHOTS = [
   {
@@ -345,13 +346,15 @@ export const MILESTONES: Milestone[] = [
   },
   {
     id: 'google-ai-essentials',
-    year: '2024',
+    year: '2025',
     title: 'Google AI Essentials',
-    organization: 'Google',
+    organization: 'Google & Coursera',
     category: 'Scholarship & Academic',
-    description: 'Course completion covering foundational artificial intelligence concepts, responsible AI, and practical applications.',
-    highlightText: 'Course Completion',
+    description: 'Certified in foundational artificial intelligence concepts, responsible AI practices, and generative AI problem solving authorized by Google.',
+    highlightText: 'Google Certified · Issued Feb 2025',
     badge: 'Google Certified',
+    certificateImage: GOOGLE_AI_CERTIFICATE,
+    evidenceLabel: 'Official Google AI Essentials Certificate (Coursera ID: R9XNXTVXX5H6)',
   },
 ];
 

@@ -5,7 +5,6 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface FinalSceneProps {
   onOpenResume: () => void;
-  onReplayIntro?: () => void;
 }
 
 export const FinalScene: React.FC<FinalSceneProps> = ({ onOpenResume }) => {

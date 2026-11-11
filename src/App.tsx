@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { OpeningSequence } from './components/OpeningSequence';
 import { Navigation } from './components/Navigation';
 import { PersonSection } from './components/PersonSection';
 import { ThinkingAndIdeationSection } from './components/ThinkingAndIdeationSection';
@@ -14,7 +13,6 @@ import { CinematicControls } from './components/CinematicControls';
 import { ImageLightbox, LightboxData } from './components/ImageLightbox';
 
 export default function App() {
-  const [showOpening, setShowOpening] = useState<boolean>(true);
   const [isResumeOpen, setIsResumeOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('origin');
   const [lightboxData, setLightboxData] = useState<LightboxData | null>(null);
@@ -42,15 +40,6 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleExploreWork = () => {
-    setTimeout(() => {
-      const worksEl = document.getElementById('works');
-      if (worksEl) {
-        worksEl.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
-  };
-
   return (
     <div className="relative min-h-screen bg-[#070709] text-[#e8e8ed] font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200">
       {/* 35mm Film Grain Overlay (Simulated Cinematic Texture) */}
@@ -58,18 +47,6 @@ export default function App() {
 
       {/* Atmospheric radial background vignettes */}
       <div className="fixed inset-0 cinematic-vignette z-0 pointer-events-none" />
-
-      {/* Cinematic Opening Sequence */}
-      {showOpening && (
-        <OpeningSequence
-          onComplete={() => setShowOpening(false)}
-          onOpenResume={() => {
-            setShowOpening(false);
-            setIsResumeOpen(true);
-          }}
-          onExploreWork={handleExploreWork}
-        />
-      )}
 
       {/* Main Experience Layout */}
       <div className="relative z-10 flex flex-col min-h-screen">
@@ -112,21 +89,12 @@ export default function App() {
           {/* Chapter 08: The Final Scene & Credits */}
           <FinalScene
             onOpenResume={() => setIsResumeOpen(true)}
-            onReplayIntro={() => {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-              setShowOpening(true);
-            }}
           />
         </main>
       </div>
 
-      {/* Floating Cinematic Audio & Replay Controls */}
-      <CinematicControls
-        onReplayIntro={() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          setShowOpening(true);
-        }}
-      />
+      {/* Floating Scroll to Top Control */}
+      <CinematicControls />
 
       {/* Interactive Curriculum Vitae & Dossier Modal */}
       <ResumeModal

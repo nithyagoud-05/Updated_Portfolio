@@ -15,10 +15,10 @@ export const ChapterHeader: React.FC<ChapterHeaderProps> = ({
 }) => {
   return (
     <div className="mb-12 sm:mb-16">
-      <div className="flex items-center gap-3 text-xs font-mono tracking-[0.3em] uppercase text-neutral-400 mb-3">
-        <span className="text-amber-400 font-semibold">{category} {number}</span>
-        <span className="text-neutral-600">/</span>
-        <span className="text-neutral-400">Engineering Portfolio</span>
+      <div className="flex items-center gap-2.5 text-xs font-mono tracking-[0.2em] uppercase text-neutral-400 mb-3">
+        <span className="text-amber-300 font-semibold">{category}</span>
+        <span className="text-neutral-600">·</span>
+        <span className="text-neutral-500 font-mono">0{number}</span>
       </div>
 
       <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#fcfbfa] leading-tight">
