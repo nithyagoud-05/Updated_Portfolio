@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Check, Copy, FileText, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUpRight, Check, Copy, FileText, Github, Linkedin, Mail, RotateCcw } from 'lucide-react';
 import { ChapterHeader } from './ChapterHeader';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface FinalSceneProps {
   onOpenResume: () => void;
+  onReplayIntro?: () => void;
 }
 
-export const FinalScene: React.FC<FinalSceneProps> = ({ onOpenResume }) => {
+export const FinalScene: React.FC<FinalSceneProps> = ({ onOpenResume, onReplayIntro }) => {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleCopyEmail = () => {
@@ -118,15 +119,15 @@ export const FinalScene: React.FC<FinalSceneProps> = ({ onOpenResume }) => {
             <ArrowUpRight className="w-3 h-3" />
           </a>
 
-          <a
-            href={PERSONAL_INFO.portfolioUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-amber-300 transition-colors"
-          >
-            <span>GitHub Pages Mirror</span>
-            <ArrowUpRight className="w-3 h-3" />
-          </a>
+          {onReplayIntro && (
+            <button
+              onClick={onReplayIntro}
+              className="inline-flex items-center gap-2 hover:text-amber-300 transition-colors uppercase tracking-widest"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>Replay Intro</span>
+            </button>
+          )}
         </div>
 
         {/* Clean Professional Footer Bar */}

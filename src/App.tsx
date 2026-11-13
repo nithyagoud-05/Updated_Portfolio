@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navigation } from './components/Navigation';
+import { OpeningSequence } from './components/OpeningSequence';
 import { PersonSection } from './components/PersonSection';
 import { ThinkingAndIdeationSection } from './components/ThinkingAndIdeationSection';
 import { JourneyTimeline } from './components/JourneyTimeline';
@@ -13,6 +14,7 @@ import { CinematicControls } from './components/CinematicControls';
 import { ImageLightbox, LightboxData } from './components/ImageLightbox';
 
 export default function App() {
+  const [showOpening, setShowOpening] = useState<boolean>(true);
   const [isResumeOpen, setIsResumeOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('origin');
   const [lightboxData, setLightboxData] = useState<LightboxData | null>(null);
@@ -40,8 +42,26 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleExploreWork = () => {
+    setShowOpening(false);
+    setTimeout(() => {
+      const worksEl = document.getElementById('works');
+      if (worksEl) {
+        worksEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 120);
+  };
+
   return (
     <div className="relative min-h-screen bg-[#070709] text-[#e8e8ed] font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200">
+      {/* Cinematic Opening Sequence (no Scene 1/2/3/4 headings) */}
+      {showOpening && (
+        <OpeningSequence
+          onComplete={() => setShowOpening(false)}
+          onExploreWork={handleExploreWork}
+        />
+      )}
+
       {/* 35mm Film Grain Overlay (Simulated Cinematic Texture) */}
       <div className="film-grain" />
 
@@ -86,15 +106,26 @@ export default function App() {
           {/* Chapter 07: Thinking, Ideation & Purpose */}
           <ThinkingAndIdeationSection />
 
-          {/* Chapter 08: The Final Scene & Credits */}
+          {/* Chapter 08: Let's Connect */}
           <FinalScene
             onOpenResume={() => setIsResumeOpen(true)}
+            onReplayIntro={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setShowOpening(true);
+            }}
           />
         </main>
       </div>
 
-      {/* Floating Scroll to Top Control */}
-      <CinematicControls />
+      {/* Floating Audio, Replay Intro & Scroll Controls */}
+      {!showOpening && (
+        <CinematicControls
+          onReplayIntro={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setShowOpening(true);
+          }}
+        />
+      )}
 
       {/* Interactive Curriculum Vitae & Dossier Modal */}
       <ResumeModal

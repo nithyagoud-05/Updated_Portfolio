@@ -53,7 +53,6 @@ export const PERSONAL_INFO = {
   email: 'nithyagoudelikatti@gmail.com',
   github: 'https://github.com/nithyagoud-05',
   linkedin: 'https://www.linkedin.com/in/elikatti-nithya-goud/',
-  portfolioUrl: 'https://nithyagoud-05.github.io/portfolio',
   codolio: 'nithyagoud_28',
   
   heroHeadline: 'Curious by nature. Ambitious by choice. Building along the way.',
