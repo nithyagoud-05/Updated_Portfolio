@@ -10,6 +10,7 @@ export const SPARK_CHAMBER_CERTIFICATE = '/assets/aistudio/spark-chamber_8974e52
 export const SERVICENOW_SLIDE = '/assets/aistudio/image_00c9b052.png';
 export const MCKINSEY_ACCEPTANCE = '/assets/aistudio/mc_c_db2be7c5.jpeg';
 export const GOOGLE_AI_CERTIFICATE = '/assets/aistudio/Google_AI_Essentials_cfe52cc3.jpeg';
+export const RESUME_PDF_URL = '/assets/aistudio/Nithya_Updated__2__579e0de8.pdf';
 
 export const ANNAPURNA_SCREENSHOTS = [
   {
